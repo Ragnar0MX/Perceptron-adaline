@@ -1,0 +1,11 @@
+C:\Users\moy_n\source\repos\Act4_RedNuoronal\Act4_RedNuoronal\bin\Debug\Act4_RedNuoronal.exe.config
+C:\Users\moy_n\source\repos\Act4_RedNuoronal\Act4_RedNuoronal\bin\Debug\Act4_RedNuoronal.exe
+C:\Users\moy_n\source\repos\Act4_RedNuoronal\Act4_RedNuoronal\bin\Debug\Act4_RedNuoronal.pdb
+C:\Users\moy_n\source\repos\Act4_RedNuoronal\Act4_RedNuoronal\obj\Debug\Act4_RedNuoronal.csprojAssemblyReference.cache
+C:\Users\moy_n\source\repos\Act4_RedNuoronal\Act4_RedNuoronal\obj\Debug\Act4_RedNuoronal.Form1.resources
+C:\Users\moy_n\source\repos\Act4_RedNuoronal\Act4_RedNuoronal\obj\Debug\Act4_RedNuoronal.Properties.Resources.resources
+C:\Users\moy_n\source\repos\Act4_RedNuoronal\Act4_RedNuoronal\obj\Debug\Act4_RedNuoronal.csproj.GenerateResource.cache
+C:\Users\moy_n\source\repos\Act4_RedNuoronal\Act4_RedNuoronal\obj\Debug\Act4_RedNuoronal.csproj.CoreCompileInputs.cache
+C:\Users\moy_n\source\repos\Act4_RedNuoronal\Act4_RedNuoronal\obj\Debug\Act4_RedNuoronal.exe
+C:\Users\moy_n\source\repos\Act4_RedNuoronal\Act4_RedNuoronal\obj\Debug\Act4_RedNuoronal.pdb
+C:\Users\moy_n\source\repos\Act4_RedNuoronal\Act4_RedNuoronal\obj\Debug\Act4_RedNuoronal.FormAdaline.resources
