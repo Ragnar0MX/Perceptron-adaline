@@ -9,7 +9,7 @@ namespace Act4_RedNuoronal
     class Adaline
     {
         public List<double> w,wT;
-        public double umbral,tasa;
+        public double umbral, tasa, error_total, e_red;
         public double[] salidaEsperada, salida, error,diferencia,dws;
         public double[,] Entradas;
 
@@ -21,6 +21,8 @@ namespace Act4_RedNuoronal
                 this.w.Add(0);
                 this.wT.Add(0);
             }
+            this.e_red = 0;
+            this.error_total = 0;
             this.umbral = 0;
             this.tasa = 0.3;
             this.dws = new double[salidaEsperada.Count()];
@@ -42,34 +44,29 @@ namespace Act4_RedNuoronal
 
         public void paso02()
         {
-            double z;
+            double y;
             error[2] = error[1];
             for (int i = 0; i < salida.Count(); i++)
             {
-                z = sumatoriaPesos(i);
-                salida[i] = z;
-                error[3] = salidaEsperada[i] - z;
+                y = sumatoriaPesos(i);
+                salida[i] = y;
+                error[3] =salidaEsperada[i] - y;
                 diferencia[i] = error[3];
                 calcularPesosUmrabal(i, error[3]);
+                error_total += Math.Pow(error[3], 2);
             }
             double aux =salida.Length;
-            error[1] = (1/2) ;
+            error[1] = (1/aux)*error_total ;
             error[0] = (error[1] - error[2]);
+            e_red = error[0];
         }
         private void calcularPesosUmrabal(int p,double error)
         {
-            double auxU = 0;
             for (int j = 0; j < w.Count(); j++)
             {
-                dws[j] = tasa * diferencia[p] * Entradas[p, j];
+                w[j] += tasa*error*salida[p]*(1-salida[p])*Entradas[p,j];
             }
-             auxU=(tasa * diferencia[p]*(-1));
-            for (int j =0;j < w.Count(); j++)
-            {
-                w[j] = w[j] + dws[j];
-            }
-            umbral = umbral + auxU;
-
+            umbral -= tasa * error*salida[p]*(1-salida[p]);
 
         }
 
@@ -89,13 +86,8 @@ namespace Act4_RedNuoronal
             {
                 acomulado += Entradas[numfila, i] * w[i];
             }
-            acomulado = acomulado - umbral;
-            return acomulado;
-        }
-
-        private void  diferenciYpDp(int i, double yp)
-        {
-             diferencia[i]=salidaEsperada[i] - salida[i];
+            acomulado -= umbral;
+            return 1.0/(1.0+Math.Exp(-acomulado));
         }
 
     }

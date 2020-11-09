@@ -129,10 +129,10 @@ namespace Act4_RedNuoronal
         {
             Console.WriteLine(error);
             bool continua = true;
-            /*foreach (Adaline p in RedN)
-                if (Math.Abs(p.error[0]) < 0.00001)
-                    continua = false;*/
-            if (epoca<120)
+            foreach (Adaline p in RedN)
+                if (Math.Abs(p.error[0]) > 0.1)
+                    continua = false;
+            if (!continua)
             {
                 IniciarAnalisis();
                 graficarLineas();
@@ -144,10 +144,6 @@ namespace Act4_RedNuoronal
                 graficarLineas();
                 graficar_error();
                 timer1.Stop();
-                foreach (Adaline p in RedN)
-                {
-                    p.SalidaFinal();
-                }
                 leer.archivoRAdaline(RedN);
             }
         }
